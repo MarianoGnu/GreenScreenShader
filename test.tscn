@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=1]
+
+[ext_resource path="res://background.jpg" type="Texture" id=1]
+[ext_resource path="res://test2.gd" type="Script" id=2]
+[ext_resource path="res://Chrysanthemum.jpg" type="Texture" id=3]
+[ext_resource path="res://Desert.jpg" type="Texture" id=4]
+[ext_resource path="res://Hydrangeas.jpg" type="Texture" id=5]
+[ext_resource path="res://Jellyfish.jpg" type="Texture" id=6]
+[ext_resource path="res://Koala.jpg" type="Texture" id=7]
+[ext_resource path="res://Lighthouse.jpg" type="Texture" id=8]
+[ext_resource path="res://Penguins.jpg" type="Texture" id=9]
+[ext_resource path="res://Tulips.jpg" type="Texture" id=10]
+[ext_resource path="res://Harry_Potter_pantalla_verde.ogv" type="VideoStream" id=11]
+[ext_resource path="res://test.gd" type="Script" id=12]
+
+[sub_resource type="CanvasItemShaderGraph" id=1]
+
+_code = { "fragment":"vec3 nd1sl2=vec3(UV,0);\nvec4 rt_default_tex9=tex(TEXTURE,nd1sl2.xy);\nvec3 nd9sl0=rt_default_tex9.rgb;\nfloat nd9sl1=rt_default_tex9.a;\nvec3 nd2sl0def=vec3(0, 0, 0);\nvec4 rt_default_tex2=tex(TEXTURE,nd2sl0def.xy);\nvec3 nd2sl0=rt_default_tex2.rgb;\nfloat nd2sl1=rt_default_tex2.a;\nuniform float Slope=0.2;\nfloat nd3sl0=Slope;\nvec3 nd4sl0=nd9sl0-nd2sl0;\nuniform float Thresh=0.8;\nfloat nd5sl0=Thresh;\nfloat nd6sl0def=1;\nfloat nd6sl0=nd6sl0def-nd3sl0;\nfloat nd7sl0=nd6sl0*nd5sl0;\nfloat nd11sl0=length(nd4sl0);\nfloat nd8sl0=nd11sl0-nd7sl0;\nfloat nd10sl0=nd5sl0-nd7sl0;\nfloat nd20sl0=nd8sl0/nd10sl0;\nfloat nd12sl0=min(max(nd20sl0,0),1);\nfloat nd13sl1def=2;\nfloat nd13sl0=nd12sl0*nd13sl1def;\nfloat nd14sl0def=3;\nfloat nd14sl0=nd14sl0def-nd13sl0;\nfloat nd15sl0=nd14sl0*nd12sl0;\nCOLOR.a=nd15sl0;\n", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+_data = { "shaders":[ [ 0, 33, Vector2( 350, 40 ), null, null, [  ], 1, 0, Vector2( 50, 40 ), null, null, [  ] ], [ 0, 33, Vector2( 1793, -123 ), null, null, [ 1, 15, 0 ], 1, 0, Vector2( 56, -56 ), null, null, [  ], 2, 32, Vector2( 215, 108 ), null, null, [ 2147483647, 0, null ], 3, 26, Vector2( 394.88, -272 ), "Slope", 0.2, [  ], 4, 8, Vector2( 392.88, 40 ), 1, null, [ 0, 9, 0, 1, 2, 0, 2147483647, 0, null, 2147483647, 1, null ], 5, 26, Vector2( 480.88, -162 ), "Thresh", 0.8, [  ], 6, 7, Vector2( 543.88, -278 ), 1, null, [ 1, 3, 0, 2147483647, 0, 1.0, 2147483647, 1, null ], 7, 7, Vector2( 718.88, -298 ), 2, null, [ 0, 6, 0, 1, 5, 0, 2147483647, 0, 1.0, 2147483647, 1, null ], 8, 7, Vector2( 894.88, -4.00003 ), 1, null, [ 0, 11, 0, 1, 7, 0, 2147483647, 0, null, 2147483647, 1, null ], 9, 32, Vector2( 215, 8 ), null, null, [ 0, 1, 2, 2147483647, 0, null ], 10, 7, Vector2( 899.88, -172 ), 1, null, [ 0, 5, 0, 1, 7, 0, 2147483647, 0, null, 2147483647, 1, null ], 11, 16, Vector2( 613.88, 33 ), null, null, [ 0, 4, 0, 2147483647, 0, null ], 12, 14, Vector2( 1158.88, -50 ), 18, null, [ 0, 20, 0, 2147483647, 0, null ], 13, 7, Vector2( 1270.88, -155 ), 2, null, [ 0, 12, 0, 2147483647, 0, null, 2147483647, 1, 2.0 ], 14, 7, Vector2( 1408.88, -147 ), 1, null, [ 1, 13, 0, 2147483647, 0, 3.0, 2147483647, 1, null ], 15, 7, Vector2( 1543.88, -106 ), 2, null, [ 0, 14, 0, 1, 12, 0, 2147483647, 0, null, 2147483647, 1, 0.2 ], 17, 34, Vector2( 699.88, -209 ), "edge0", null, [  ], 18, 34, Vector2( 474.88, -88 ), "edge1\n", null, [  ], 19, 34, Vector2( 605.88, -15 ), "x\n", null, [  ], 20, 7, Vector2( 1035.88, -67 ), 3, null, [ 0, 8, 0, 1, 10, 0, 2147483647, 0, null, 2147483647, 1, null ] ], [ 0, 33, Vector2( 695, 71 ), null, null, [  ], 1, 0, Vector2( 219, 42 ), null, null, [  ] ] ] }
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+shader/shader = SubResource( 1 )
+shader/shading_mode = 0
+shader_param/Slope = 0.05
+shader_param/Thresh = 0.3
+
+[node name="Control" type="Control"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+
+[node name="TextureFrame" type="TextureFrame" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+margin/left = -40.0
+margin/top = -10.0
+margin/right = -56.0
+margin/bottom = -5.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+background1 = ExtResource( 1 )
+background2 = ExtResource( 3 )
+background3 = ExtResource( 4 )
+background4 = ExtResource( 5 )
+background5 = ExtResource( 6 )
+background6 = ExtResource( 7 )
+background7 = ExtResource( 8 )
+background8 = ExtResource( 9 )
+background9 = ExtResource( 10 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+
+material/material = SubResource( 2 )
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+stream/audio_track = 0
+stream/stream = ExtResource( 11 )
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+expand = true
+script/script = ExtResource( 12 )
+playing = true
+
+
